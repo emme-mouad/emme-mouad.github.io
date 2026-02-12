@@ -81,6 +81,11 @@
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
+        .dots {
+            display: inline-block;
+            width: 20px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -130,7 +135,7 @@
             <h3>projects</h3>
             <div class="project">
                 <p><strong>project ####</strong></p>
-                <p>work in progress..</p>
+                <p>work in progress<span class="dots" id="dots">.</span></p>
                 <a href="https://emme-mouad.github.io/404/" target="_blank">view →</a>
             </div>
         </div>
@@ -138,5 +143,12 @@
         <footer>© 2026 mouad tounani</footer>
 
     </div>
+    <script>
+        let dotCount = 1;
+        setInterval(() => {
+            dotCount = (dotCount % 3) + 1;
+            document.getElementById('dots').textContent = '.'.repeat(dotCount);
+        }, 500);
+    </script>
 </body>
 </html>
