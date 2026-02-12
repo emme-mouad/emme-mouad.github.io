@@ -6,13 +6,7 @@
     <title>Mouad Tounani</title>
     <style>
         * { box-sizing: border-box; }
-        body {
-            font-family: monospace;
-            background: #000;
-            color: #fff;
-            margin: 0;
-            padding: 40px 20px;
-        }
+        body { font-family: monospace; background: #000; color: #fff; margin: 0; padding: 40px 20px; }
         .container { max-width: 700px; margin: auto; }
         h1 { font-size: 24px; margin-bottom: 4px; }
         h2 { font-size: 16px; margin: 0 0 16px 0; font-weight: normal; opacity: 0.6; }
@@ -27,20 +21,11 @@
         .project p { opacity: 0.8; margin: 6px 0; }
         .project a { display: inline-block; margin-top: 10px; font-size: 13px; }
         footer { margin-top: 40px; opacity: 0.4; font-size: 13px; }
-        .header-line {
-            border-bottom: 1px solid #fff;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+        .header-line { border-bottom: 1px solid #fff; padding-bottom: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 30px; }
         .header-text { flex: 1; }
-        .header-map {
-            width: 240px;
-            border: 1px solid #fff;
-            flex-shrink: 0;
-        }
+        .header-map { width: 240px; border: 1px solid #fff; flex-shrink: 0; }
+        .header-map-wrapper { display: flex; flex-direction: column; align-items: flex-end; width: 240px; flex-shrink: 0; }
+        .location { margin-top: 10px; font-size: 14px; opacity: 0.6; }
         .dots { display: inline-block; width: 20px; text-align: left; }
     </style>
 </head>
@@ -48,6 +33,7 @@
     <div class="container">
 
         <div class="header-line">
+            
             <div class="header-text">
                 <h1>mouad tounani</h1>
                 <h2>it & software development student</h2>
@@ -57,12 +43,12 @@
                 </p>
             </div>
             
-            <img class="header-map" src="map.jpeg"alt="mâcon, france" title="mâcon, france" />
-            <br>
-                <p>
-                    <h2>based in : macon, france</h2>
-                </p>
+            <div class="header-map-wrapper">
+                <img class="header-map" src="map.jpeg" alt="mâcon, france" title="mâcon, france" />
+                <p class="location">based in : macon, france</p>
             </div>
+            
+        </div>
 
         <div class="section">
             <h3>about</h3>
@@ -104,6 +90,7 @@
         <footer>© 2026 mouad tounani</footer>
 
     </div>
+    
     <script>
         let dotCount = 1;
         setInterval(() => {
@@ -111,5 +98,6 @@
             document.getElementById('dots').textContent = '.'.repeat(dotCount);
         }, 500);
     </script>
+    
 </body>
 </html>
