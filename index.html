@@ -21,11 +21,12 @@
         .project p { opacity: 0.8; margin: 6px 0; }
         .project a { display: inline-block; margin-top: 10px; font-size: 13px; }
         footer { margin-top: 40px; opacity: 0.4; font-size: 13px; }
-        .header-line { border-bottom: 1px solid #fff; padding-bottom: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 30px; }
+        .header-line { border-bottom: 1px solid #fff; padding-bottom: 20px; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 30px; }
         .header-text { flex: 1; }
         .header-map { width: 240px; border: 1px solid #fff; flex-shrink: 0; }
         .header-map-wrapper { display: flex; flex-direction: column; align-items: flex-end; width: 240px; flex-shrink: 0; }
-        .location { margin-top: 10px; font-size: 14px; opacity: 0.6; }
+        .location { margin-top: 10px; font-size: 14px; }
+        .soft { opacity: 0.6; }
         .dots { display: inline-block; width: 20px; text-align: left; }
     </style>
 </head>
@@ -45,7 +46,7 @@
             
             <div class="header-map-wrapper">
                 <img class="header-map" src="map.jpeg" alt="mâcon, france" title="mâcon, france" />
-                <p class="location">based in : macon, france</p>
+                <p class="location"><span class="soft">based in :</span> macon, france</p>
             </div>
             
         </div>
