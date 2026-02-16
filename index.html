@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mouad Tounani</title>
+    
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: monospace; background: #000; color: #fff; margin: 0; padding: 40px 20px; }
+        .container { max-width: 700px; margin: auto; }
+        h1 { font-size: 24px; margin-bottom: 4px; }
+        h2 { font-size: 16px; margin: 0 0 16px 0; font-weight: normal; opacity: 0.6; }
+        h3 { font-size: 16px; margin: 0 0 16px 0; border-bottom: 1px solid #fff; padding-bottom: 8px; }
+        h4 { font-size: 14px; margin: 0 0 6px 0; }
+        p { margin: 8px 0; line-height: 1.6; }
+        a { color: #fff; text-decoration: underline; }
+        a:hover { opacity: 0.7; }
+        .section { border: 1px solid #fff; padding: 20px; margin: 20px 0; }
+        .section p { opacity: 0.8; margin: 6px 0; }
+        .group { margin: 10px 0; }
+        .group span { opacity: 0.6; }
+        .project { border: 1px solid #555; padding: 16px; margin: 12px 0; }
+        .project p { opacity: 0.8; margin: 6px 0; }
+        .project a { display: inline-block; margin-top: 10px; font-size: 13px; }
+        footer { margin-top: 40px; opacity: 0.4; font-size: 13px; }
+        .header-line { border-bottom: 1px solid #fff; padding-bottom: 20px; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 30px; }
+        .header-text { flex: 1; }
+        .header-map { width: 240px; border: 1px solid #fff; flex-shrink: 0; }
+        .header-map-wrapper { display: flex; flex-direction: column; align-items: flex-end; width: 240px; flex-shrink: 0; }
+        .location { margin-top: 10px; font-size: 14px; }
+        .soft { opacity: 0.6; }
+        .dots { display: inline-block; width: 20px; text-align: left; }
+    </style>
+    
+</head>
+    
+<body>
+    
+    <div class="container">
+
+        <div class="header-line">
+            
+            <div class="header-text">
+                <h1>mouad tounani</h1>
+                <h2>it & software development student</h2>
+                <p>
+                    <a href="https://github.com/emme-mouad" target="_blank" rel="noopener noreferrer">github</a> |
+                    <a href="https://fr.linkedin.com/in/mouad-tounani-312a82385" target="_blank" rel="noopener noreferrer">linkedin</a> |
+                    <a href="mailto:mouad.tounani.dev@gmail.com">email</a>
+                </p>
+            </div>
+            
+            <div class="header-map-wrapper">
+                <img class="header-map" src="map.jpeg" alt="mâcon, france" title="mâcon, france" />
+                <p class="location"><span class="soft">based in :</span> mâcon, france</p>
+            </div>
+            
+        </div>
+
+        <div class="section">
+            <h3>about me</h3>
+            <p>hi, i'm an it and software development student passionate about building projects and exploring all kinds of technologies. 
+                i love turning ideas into practical solutions and continuously improving my skills along the way!!</p>
+        </div>
+
+        <div class="section">
+            <h3>skills</h3>
+            <div class="group">
+                <p><span>databases :</span> sql, mysql [phpmyadmin, workbench], access</p>
+            </div>
+            <div class="group">
+                <p><span>programming :</span> c#, python, visual studio [winforms], oop, oledb/odbc</p>
+            </div>
+            <div class="group">
+                <p><span>web :</span> html, css, php, pdo, wordpress, prestashop, ftp hosting</p>
+            </div>
+            <div class="group">
+                <p><span>other :</span> excel, word, windows, linux, virtualisation, gdpr, autocad, fusion 360, 3d printing</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>education</h3>
+            <div class="group">
+                <p><span>bts sio slam :</span> 
+                    advanced technician's certificate in it services, software solutions and business applications
+                    [lycée lamartine, mâcon - expected graduation: 2027]</p>
+            </div>
+            <div class="group">
+                <p><span>bac stmg sig :</span> 
+                    technological baccalaureate in management, specializing in information systems
+                    [lycée lamartine, mâcon - graduated in : 2025]</p>   
+            </div>       
+        </div>
+        
+        <div class="section">
+            <h3>projects</h3>
+            <div class="project">
+                <p><h4>this portfolio website</h4></p>
+                <p><span class="soft">goal :</span> build a personal website to present my profile and projects.</p>
+                <p><span class="soft">stack :</span> html, css, js [small ui animations], github pages.</p>
+                <p><span class="soft">status :</span> work in progress<span class="dots">.</span></p>
+                <a href="https://github.com/emme-mouad/emme-mouad.github.io" target="_blank" rel="noopener noreferrer">repository →</a>
+            </div>
+            <div class="project">
+                <p><h4>business database application</h4></p>
+                <p><span class="soft">goal :</span> support a cinema planning and online publication workflow.</p>
+                <p><span class="soft">stack :</span> mysql database  + c# desktop app [visual studio].</p>
+                <p><span class="soft">status :</span> work in progress<span class="dots">.</span></p>
+                <a href="https://emme-mouad.github.io/404/" target="_blank" rel="noopener noreferrer">error 404 →</a>
+            </div>
+        </div>
+
+        <footer>© 2026 mouad tounani</footer>
+
+    </div>
+    
+    <script>
+        let dotCount = 1;
+        const dotEls = document.querySelectorAll('.dots');
+        setInterval(() => {
+            dotCount = (dotCount % 3) + 1;
+            const dots = '.'.repeat(dotCount);
+            dotEls.forEach(el => el.textContent = dots);
+        }, 500);
+    </script>
+    
+</body>
+</html>
