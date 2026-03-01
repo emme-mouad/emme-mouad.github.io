@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Mouad Tounani</title>
-    
     <style>
         * { box-sizing: border-box; }
         body { font-family: monospace; background: #000; color: #fff; margin: 0; padding: 40px 20px; }
@@ -32,18 +30,115 @@
         .location { margin-top: 10px; font-size: 14px; }
         .soft { opacity: 0.6; }
         .dots { display: inline-block; width: 20px; text-align: left; }
-        .button { display: inline-block; margin-top: 12px; padding: 6px 14px; border: 1px solid #fff; text-decoration: none; font-size: 13px; transition: opacity 0.2s;}
-        .button:hover { opacity: 0.7;}
-    </style>
-    
-</head>
-    
-<body>
-    
-    <div class="container">
+        .button { display: inline-block; margin-top: 12px; padding: 6px 14px; border: 1px solid #fff; text-decoration: none; font-size: 13px; transition: opacity 0.2s; }
+        .button:hover { opacity: 0.7; }
 
+        .skills-header {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 0;
+            margin: 0 0 10px 0;
+        }
+        .skills-header h3 {
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 8px;
+        }
+        .skills-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: flex-end;
+            margin-bottom: 0;
+        }
+        .skill-button {
+            font: inherit;
+            font-size: 12px;
+            text-transform: lowercase;
+            color: #fff;
+            background: #000;
+            border: 1px solid #777;
+            border-bottom: 1px solid #777;
+            padding: 5px 9px 4px 9px;
+            cursor: pointer;
+            opacity: 0.75;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0;
+            transition: opacity 0.2s, border-color 0.2s;
+        }
+        .skill-button:hover { opacity: 1; }
+        .skill-button.active {
+            opacity: 1;
+            border-color: #fff;
+            border-bottom-color: #000;
+            z-index: 2;
+            margin-bottom: -1px;
+        }
+
+        .skills-tree,
+        .skills-tree ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 22px;
+        }
+        .skills-tree {
+            padding-left: 0;
+            margin-top: 6px;
+        }
+        .skills-tree li {
+            position: relative;
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+        .skills-tree li::before {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: -12px;
+            width: 1px;
+            height: calc(100% + 14px);
+            background: #555;
+        }
+        .skills-tree li::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: -12px;
+            width: 10px;
+            height: 1px;
+            background: #555;
+        }
+        .skills-tree > li::before,
+        .skills-tree > li::after {
+            display: none;
+        }
+        .skills-tree li:last-child::before { height: 19px; }
+        .folder-name {
+            opacity: 0.95;
+        }
+        .tech-name {
+            opacity: 0.82;
+        }
+        .skills-tree [data-section].is-hidden { display: none; }
+
+        @media (max-width: 760px) {
+            body { padding: 28px 14px; }
+            .header-line { flex-direction: column; gap: 16px; }
+            .header-map-wrapper { width: 100%; align-items: flex-start; }
+            .header-map { width: min(100%, 300px); }
+            .skills-header { gap: 8px; }
+            .skill-button { font-size: 11px; padding: 3px 7px; }
+            .skills-tree, .skills-tree ul { padding-left: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <div class="header-line">
-            
             <div class="header-text">
                 <h1>mouad tounani</h1>
                 <h2>it & software development student</h2>
@@ -54,84 +149,256 @@
                     <a href="cv.pdf" download="Mouad_Tounani_CV.pdf" class="button">download cv</a>
                 </p>
             </div>
-            
+
             <div class="header-map-wrapper">
-                <img class="header-map" src="map.jpeg" alt="mâcon, france" title="mâcon, france" />
+                <img class="header-map" src="map.jpeg" alt="mâcon, france" title="mâcon, france">
                 <p class="location"><span class="soft">based in :</span> mâcon, france</p>
             </div>
-            
         </div>
 
         <div class="section">
             <h3>about me</h3>
-            <p>hi, i'm an it and software development student passionate about building projects and exploring all kinds of technologies. 
-                i love turning ideas into practical solutions and continuously improving my skills along the way !!</p>
+            <p>
+                hi, i'm an it and software development student passionate about building projects and exploring all kinds of technologies. 
+                i love turning ideas into practical solutions and continuously improving my skills along the way !!
+            </p>
         </div>
 
         <div class="section">
-            <h3>skills</h3>
-            <div class="group">
-                <p><span>languages :</span> italian [c1], english [b1+], french [b1], arabic</p>
+            <div class="skills-header">
+                <h3>skills</h3>
+                <div class="skills-buttons" role="group" aria-label="skills categories">
+                    <button class="skill-button active" type="button" data-filter="languages">languages</button>
+                    <button class="skill-button" type="button" data-filter="databases">databases</button>
+                    <button class="skill-button" type="button" data-filter="programming">programming</button>
+                    <button class="skill-button" type="button" data-filter="web">web</button>
+                    <button class="skill-button" type="button" data-filter="other">other</button>
+                    <button class="skill-button" type="button" data-filter="all">all</button>
+                </div>
             </div>
-            <div class="group">
-                <p><span>databases :</span> sql, mysql [phpmyadmin, workbench], access</p>
-            </div>
-            <div class="group">
-                <p><span>programming :</span> c#, python, visual studio [winforms], oop, oledb/odbc</p>
-            </div>
-            <div class="group">
-                <p><span>web :</span> html, css, php, pdo, wordpress, prestashop, ftp hosting</p>
-            </div>
-            <div class="group">
-                <p><span>other :</span> excel, word, windows, linux, virtualisation, gdpr, autocad, fusion 360, 3d printing</p>
-            </div>
+            <ul class="skills-tree" aria-label="skills tree">
+                <li>
+                    <span class="folder-name">skills/</span>
+                    <ul>
+                        <li data-section="languages">
+                            <span class="folder-name">languages/</span>
+                            <ul>
+                                <li>
+                                    <span class="folder-name">spoken/</span>
+                                    <ul>
+                                        <li><span class="tech-name">italian [c1]</span></li>
+                                        <li><span class="tech-name">english [b1+]</span></li>
+                                        <li><span class="tech-name">french [b1]</span></li>
+                                        <li><span class="tech-name">arabic</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-section="databases" class="is-hidden">
+                            <span class="folder-name">databases/</span>
+                            <ul>
+                                <li>
+                                    <span class="folder-name">query/</span>
+                                    <ul>
+                                        <li><span class="tech-name">sql</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">systems/</span>
+                                    <ul>
+                                        <li><span class="tech-name">mysql</span></li>
+                                        <li><span class="tech-name">access</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">tools/</span>
+                                    <ul>
+                                        <li><span class="tech-name">phpmyadmin</span></li>
+                                        <li><span class="tech-name">workbench</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-section="programming" class="is-hidden">
+                            <span class="folder-name">programming/</span>
+                            <ul>
+                                <li>
+                                    <span class="folder-name">languages/</span>
+                                    <ul>
+                                        <li><span class="tech-name">c#</span></li>
+                                        <li><span class="tech-name">python</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">frameworks/</span>
+                                    <ul>
+                                        <li><span class="tech-name">winforms</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">concepts/</span>
+                                    <ul>
+                                        <li><span class="tech-name">oop</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">data-connectors/</span>
+                                    <ul>
+                                        <li><span class="tech-name">oledb</span></li>
+                                        <li><span class="tech-name">odbc</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">tools/</span>
+                                    <ul>
+                                        <li><span class="tech-name">visual studio</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-section="web" class="is-hidden">
+                            <span class="folder-name">web/</span>
+                            <ul>
+                                <li>
+                                    <span class="folder-name">frontend/</span>
+                                    <ul>
+                                        <li><span class="tech-name">html</span></li>
+                                        <li><span class="tech-name">css</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">backend/</span>
+                                    <ul>
+                                        <li><span class="tech-name">php</span></li>
+                                        <li><span class="tech-name">pdo</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">cms/</span>
+                                    <ul>
+                                        <li><span class="tech-name">wordpress</span></li>
+                                        <li><span class="tech-name">prestashop</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">deployment/</span>
+                                    <ul>
+                                        <li><span class="tech-name">ftp hosting</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-section="other" class="is-hidden">
+                            <span class="folder-name">other/</span>
+                            <ul>
+                                <li>
+                                    <span class="folder-name">office/</span>
+                                    <ul>
+                                        <li><span class="tech-name">excel</span></li>
+                                        <li><span class="tech-name">word</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">os/</span>
+                                    <ul>
+                                        <li><span class="tech-name">windows</span></li>
+                                        <li><span class="tech-name">linux</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">infrastructure/</span>
+                                    <ul>
+                                        <li><span class="tech-name">virtualisation</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">compliance/</span>
+                                    <ul>
+                                        <li><span class="tech-name">gdpr basics</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="folder-name">cad-3d/</span>
+                                    <ul>
+                                        <li><span class="tech-name">autocad</span></li>
+                                        <li><span class="tech-name">fusion 360</span></li>
+                                        <li><span class="tech-name">3d printing</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <div class="section">
             <h3>education</h3>
             <div class="group">
-                <p><span>bts sio slam :</span> 
+                <p>
+                    <span>bts sio slam :</span>
                     advanced technician's certificate in it services, software solutions and business applications
-                    [lycée lamartine, mâcon - expected graduation : 2027]</p>
+                    [lycée lamartine, mâcon - expected graduation : 2027]
+                </p>
             </div>
             <div class="group">
-                <p><span>bac stmg sig :</span> 
+                <p>
+                    <span>bac stmg sig :</span>
                     technological baccalaureate in management, specializing in information systems
-                    [lycée lamartine, mâcon - graduated in : 2025]</p>   
-            </div>       
+                    [lycée lamartine, mâcon - graduated in : 2025]
+                </p>
+            </div>
         </div>
-        
+
         <div class="section">
             <h3>projects</h3>
             <div class="project">
-                <p><h4>this portfolio website</h4></p>
+                <h4>this portfolio website</h4>
                 <p><span class="soft">goal :</span> build a personal website to present my profile and projects.</p>
                 <p><span class="soft">stack :</span> html, css, js [small ui animations], github pages.</p>
                 <p><span class="soft">status :</span> work in progress<span class="dots">.</span></p>
                 <a href="https://github.com/emme-mouad/emme-mouad.github.io" target="_blank" rel="noopener noreferrer">repository →</a>
             </div>
             <div class="project">
-                <p><h4>business database application</h4></p>
+                <h4>business database application</h4>
                 <p><span class="soft">goal :</span> support a cinema planning and online publication workflow.</p>
-                <p><span class="soft">stack :</span> mysql database  + c# desktop app [visual studio].</p>
+                <p><span class="soft">stack :</span> mysql database + c# desktop app [visual studio].</p>
                 <p><span class="soft">status :</span> work in progress<span class="dots">.</span></p>
                 <a href="https://emme-mouad.github.io/404/" target="_blank" rel="noopener noreferrer">error 404 →</a>
             </div>
         </div>
 
         <footer>© 2026 mouad tounani</footer>
-
     </div>
-    
+
     <script>
         let dotCount = 1;
-        const dotEls = document.querySelectorAll('.dots');
+        const dotEls = document.querySelectorAll(".dots");
         setInterval(() => {
             dotCount = (dotCount % 3) + 1;
-            const dots = '.'.repeat(dotCount);
-            dotEls.forEach(el => el.textContent = dots);
+            const dots = ".".repeat(dotCount);
+            dotEls.forEach((el) => {
+                el.textContent = dots;
+            });
         }, 500);
+
+        const skillButtons = document.querySelectorAll(".skill-button");
+        const skillSections = document.querySelectorAll(".skills-tree [data-section]");
+
+        skillButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const filter = button.getAttribute("data-filter");
+
+                skillButtons.forEach((item) => item.classList.remove("active"));
+                button.classList.add("active");
+
+                skillSections.forEach((section) => {
+                    const sectionKey = section.getAttribute("data-section");
+                    const shouldShow = filter === "all" || filter === sectionKey;
+                    section.classList.toggle("is-hidden", !shouldShow);
+                });
+            });
+        });
     </script>
-    
 </body>
 </html>
