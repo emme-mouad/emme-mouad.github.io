@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 
 <script>
   /* Pick the language before first paint: saved choice, else the browser's. */
@@ -39,29 +39,34 @@
 <header class="topbar">
   <a class="topbar__name" href="#top">Mouad <b>TOUNANI</b></a>
   <nav class="topbar__nav" aria-label="Sections" data-i18n-attr="aria-label:a11y.sections">
-    <a href="#experience" data-i18n="nav.experience">Experience</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
+    <a href="#experience" data-i18n="nav.experience">Experience</a>
     <a href="#skills" data-i18n="nav.skills">Skills</a>
-    <a href="#education" data-i18n="nav.education">Education</a>
   </nav>
   <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:a11y.lang">
+    <span class="lang__thumb" aria-hidden="true"></span>
     <button type="button" class="lang__btn" data-lang="en" lang="en">EN</button>
     <button type="button" class="lang__btn" data-lang="fr" lang="fr">FR</button>
   </div>
 </header>
 
+
 <main class="container" id="main">
 
   <!-- Hero -->
   <section class="hero reveal" id="top" aria-labelledby="hero-name">
-    <div class="hero__photo">
-      <img src="assets/img/photo.jpg" alt="Mouad Tounani" width="400" height="400">
-    </div>
-    <div class="hero__text">
+    <div class="hero__side">
+      <img class="hero__photo" src="assets/img/photo.jpg" alt="Mouad Tounani" width="400" height="400">
       <p class="status">
         <span class="status__dot" aria-hidden="true"></span>
-        <span data-i18n="hero.status">Looking for an internship · 11 Jan – 12 Feb 2027</span>
+        <span>
+          <span class="status__label" data-i18n="hero.statusLabel">Open to an internship</span>
+          <span class="status__dates" data-i18n="hero.statusDates">11 Jan – 12 Feb 2027</span>
+        </span>
       </p>
+    </div>
+
+    <div class="hero__text">
       <h1 class="hero__name" id="hero-name">Mouad <b>TOUNANI</b></h1>
       <p class="hero__role" data-i18n="hero.role">Software development student — BTS SIO SLAM, 2nd year</p>
       <p class="hero__lede" data-i18n="hero.lede">I build web and desktop applications backed by relational databases, with a focus on clean, secure code.</p>
@@ -79,182 +84,270 @@
 
       <ul class="links" aria-label="Profiles" data-i18n-attr="aria-label:a11y.profiles">
         <li><a href="https://github.com/emme-mouad" target="_blank" rel="noopener noreferrer">
-          <svg class="icon icon--solid" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-          GitHub</a></li>
+          <svg class="icon icon--solid" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.35 4.68-4.58 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span>GitHub</span></a></li>
         <li><a href="https://www.linkedin.com/in/mouad-tounani-312a82385/" target="_blank" rel="noopener noreferrer">
-          <svg class="icon icon--solid" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.19 1.45-2.19 2.97V21H9z"/></svg>
-          LinkedIn</a></li>
-        <li><span>
+          <svg class="icon icon--solid" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.19 1.45-2.19 2.97V21H9z"/></svg><span>LinkedIn</span></a></li>
+        <li><span class="links__item">
           <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
           <span data-i18n="hero.location">Mâcon, France</span></span></li>
         <li><a href="tel:+33632904564">
-          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h3l1.5 4-2 1.5a14 14 0 0 0 5.5 5.5l1.5-2 4 1.5v3c0 1.1-.9 2-2 2C10.5 19 5 13.5 5 7.5c0-2.2.8-4 2-4z"/></svg>
-          +33 6 32 90 45 64</a></li>
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h3l1.5 4-2 1.5a14 14 0 0 0 5.5 5.5l1.5-2 4 1.5v3c0 1.1-.9 2-2 2C10.5 19 5 13.5 5 7.5c0-2.2.8-4 2-4z"/></svg><span>+33 6 32 90 45 64</span></a></li>
       </ul>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section class="card reveal" id="experience" aria-labelledby="exp-h">
-    <h2 class="card__title" id="exp-h" data-i18n="exp.title">Experience</h2>
-
-    <article class="entry">
-      <div class="entry__head">
-        <h3 class="entry__title" data-i18n="exp.ocp.role">IT intern — web development</h3>
-        <span class="tag" data-i18n="exp.ocp.date">2026 · 5 weeks</span>
-      </div>
-      <p class="entry__org" data-i18n="exp.ocp.org">OCP Group — IT department, Khouribga (Morocco)</p>
-      <ul class="entry__list">
-        <li data-i18n="exp.ocp.b1">Designed and built an ITSM ticketing web application on my own, in PHP and MySQL.</li>
-        <li data-i18n="exp.ocp.b2">Modelled the database (users, tickets, statuses, priorities, categories, messages) after studying a real ITSM dataset.</li>
-        <li data-i18n="exp.ocp.b3">Took part in day-to-day IT support: user assistance, incident follow-up, equipment maintenance.</li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- Projects -->
+  <!-- Projects: compact tiles, one opens at a time -->
   <section class="card reveal" id="projects" aria-labelledby="proj-h">
-    <h2 class="card__title" id="proj-h" data-i18n="proj.title">Projects</h2>
+    <div class="card__head">
+      <h2 class="card__title" id="proj-h" data-i18n="proj.title">Projects</h2>
+      <p class="card__hint" data-i18n="proj.hint">Hover a project for details</p>
+    </div>
 
     <div class="projects">
-      <article class="project">
-        <a class="project__media" href="https://github.com/emme-mouad/cinema-pathe-macon#phase-1--application-c" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-          <img src="assets/img/cinema-app.jpg" alt="" width="608" height="380" loading="lazy">
-        </a>
-        <div class="project__body">
-          <div class="entry__head">
-            <h3 class="entry__title" data-i18n="proj.app.title">Cinema management app</h3>
-            <span class="tag" data-i18n="proj.done">Done</span>
+      <!-- 1 -->
+      <article class="project" data-project>
+        <button class="project__toggle" type="button" aria-expanded="false" aria-controls="p1-more" id="p1-btn">
+          <span class="project__icon project__icon--desk" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" class="icon"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </span>
+          <span class="project__head">
+            <span class="project__title" data-i18n="proj.app.title">Cinema management app</span>
+            <span class="project__short" data-i18n="proj.app.short">Desktop back-office for a multiplex cinema</span>
+          </span>
+          <span class="tag" data-i18n="proj.done">Done</span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <ul class="chips project__chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
+          <li>C#</li><li>WinForms</li><li>.NET 4.8</li><li>MySQL</li><li>iTextSharp</li>
+        </ul>
+        <div class="collapse" id="p1-more" role="region" aria-labelledby="p1-btn">
+          <div class="collapse__inner">
+            <div class="project__more">
+              <div>
+                <ul class="entry__list">
+                  <li data-i18n="proj.app.d1">Add, edit and delete films, genres and rooms (MDI WinForms interface).</li>
+                  <li data-i18n="proj.app.d2">Schedule screenings and review a day's programme.</li>
+                  <li data-i18n="proj.app.d3">Export the daily schedule to PDF with iTextSharp.</li>
+                  <li data-i18n="proj.app.d4">Parameterised ODBC queries and centralised connection settings.</li>
+                </ul>
+                <a class="more" href="https://github.com/emme-mouad/cinema-pathe-macon#phase-1--application-c" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="proj.code">View code on GitHub</span>
+                  <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <p class="project__desc" data-i18n="proj.app.desc">Desktop back-office for a multiplex: films, genres, rooms and screenings, with a daily schedule exported to PDF.</p>
-          <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
-            <li>C#</li><li>WinForms</li><li>.NET 4.8</li><li>MySQL</li><li>ODBC</li><li>iTextSharp</li>
-          </ul>
-          <a class="more" href="https://github.com/emme-mouad/cinema-pathe-macon#phase-1--application-c" target="_blank" rel="noopener noreferrer">
-            <span data-i18n="proj.code">View code on GitHub</span>
-            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
         </div>
       </article>
 
-      <article class="project">
-        <a class="project__media" href="https://github.com/emme-mouad/cinema-pathe-macon#phase-2--site-web-php" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-          <img src="assets/img/cinema-web.jpg" alt="" width="960" height="600" loading="lazy">
-        </a>
-        <div class="project__body">
-          <div class="entry__head">
-            <h3 class="entry__title" data-i18n="proj.web.title">Cinema website</h3>
-            <span class="tag" data-i18n="proj.done">Done</span>
+      <!-- 2 -->
+      <article class="project" data-project>
+        <button class="project__toggle" type="button" aria-expanded="false" aria-controls="p2-more" id="p2-btn">
+          <span class="project__icon project__icon--web" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" class="icon"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          </span>
+          <span class="project__head">
+            <span class="project__title" data-i18n="proj.web.title">Cinema website</span>
+            <span class="project__short" data-i18n="proj.web.short">Public site with search and seat booking</span>
+          </span>
+          <span class="tag" data-i18n="proj.done">Done</span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <ul class="chips project__chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
+          <li>PHP 8</li><li>PDO</li><li>MySQL</li><li>HTML</li><li>CSS</li>
+        </ul>
+        <div class="collapse" id="p2-more" role="region" aria-labelledby="p2-btn">
+          <div class="collapse__inner">
+            <div class="project__more">
+              <div>
+                <ul class="entry__list">
+                  <li data-i18n="proj.web.d1">Film pages and multi-criteria search (title, director, cast, audience, genre).</li>
+                  <li data-i18n="proj.web.d2">Screening schedule by date and seat booking with a remaining-seats check.</li>
+                  <li data-i18n="proj.web.d3">Admin area protected by HTTP authentication to add or remove screenings.</li>
+                  <li data-i18n="proj.web.d4">PDO prepared statements and escaped output against SQL injection and XSS.</li>
+                </ul>
+                <a class="more" href="https://github.com/emme-mouad/cinema-pathe-macon#phase-2--site-web-php" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="proj.code">View code on GitHub</span>
+                  <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <p class="project__desc" data-i18n="proj.web.desc">Public site sharing the same database: film pages, multi-criteria search, screening schedule, seat booking and a protected admin area.</p>
-          <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
-            <li>PHP 8</li><li>PDO</li><li>MySQL</li><li>HTML</li><li>CSS</li>
-          </ul>
-          <a class="more" href="https://github.com/emme-mouad/cinema-pathe-macon#phase-2--site-web-php" target="_blank" rel="noopener noreferrer">
-            <span data-i18n="proj.code">View code on GitHub</span>
-            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
         </div>
       </article>
 
-      <article class="project project--text">
-        <div class="project__body">
-          <div class="entry__head">
-            <h3 class="entry__title" data-i18n="proj.itsm.title">ITSM ticketing platform</h3>
-            <span class="tag" data-i18n="proj.internship">Internship</span>
+      <!-- 3 -->
+      <article class="project" data-project>
+        <button class="project__toggle" type="button" aria-expanded="false" aria-controls="p3-more" id="p3-btn">
+          <span class="project__icon project__icon--ticket" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" class="icon"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 5v12" stroke-dasharray="2 2.2"/></svg>
+          </span>
+          <span class="project__head">
+            <span class="project__title" data-i18n="proj.itsm.title">ITSM ticketing platform</span>
+            <span class="project__short" data-i18n="proj.itsm.short">IT support tool built during my internship</span>
+          </span>
+          <span class="tag" data-i18n="proj.done">Done</span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <ul class="chips project__chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
+          <li>PHP 8</li><li>PDO</li><li>MySQL</li><li>HTML</li><li>CSS</li>
+        </ul>
+        <div class="collapse" id="p3-more" role="region" aria-labelledby="p3-btn">
+          <div class="collapse__inner">
+            <div class="project__more">
+              <div>
+              <ul class="entry__list">
+                <li data-i18n="proj.itsm.d1">Three spaces with their own dashboards: user, technician and administrator.</li>
+                <li data-i18n="proj.itsm.d2">Ticket life cycle from creation to closure, with messaging between user and technician.</li>
+                <li data-i18n="proj.itsm.d3">SLA tracking per priority: on time, at risk or overdue.</li>
+                <li data-i18n="proj.itsm.d4">Hashed passwords, CSRF tokens, role checks on every page and soft-deleted accounts.</li>
+              </ul>
+              <p class="note" data-i18n="proj.private">Private repository — code available on request.</p>
+              </div>
+            </div>
           </div>
-          <p class="project__desc" data-i18n="proj.itsm.desc">Support-ticket platform with three roles (user, technician, admin), messaging, SLA tracking, CSRF protection and hashed passwords.</p>
-          <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
-            <li>PHP 8</li><li>PDO</li><li>MySQL</li><li>HTML</li><li>CSS</li>
-          </ul>
-          <p class="note" data-i18n="proj.private">Private repository — code available on request.</p>
         </div>
       </article>
 
-      <article class="project project--text">
-        <div class="project__body">
-          <div class="entry__head">
-            <h3 class="entry__title" data-i18n="proj.hotel.title">BritHotel — hotel management</h3>
-            <span class="tag tag--live"><span class="tag__dot" aria-hidden="true"></span><span data-i18n="proj.wip">In progress</span></span>
+      <!-- 4 -->
+      <article class="project" data-project>
+        <button class="project__toggle" type="button" aria-expanded="false" aria-controls="p4-more" id="p4-btn">
+          <span class="project__icon project__icon--hotel" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" class="icon"><path d="M3 20V9l9-5 9 5v11"/><path d="M8 20v-5h8v5M3 20h18"/></svg>
+          </span>
+          <span class="project__head">
+            <span class="project__title" data-i18n="proj.hotel.title">BritHotel</span>
+            <span class="project__short" data-i18n="proj.hotel.short">Hotel management, team project in Scrum</span>
+          </span>
+          <span class="tag tag--live"><span class="tag__dot" aria-hidden="true"></span><span data-i18n="proj.wip">In progress</span></span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <ul class="chips project__chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
+          <li>C#</li><li>Entity Framework</li><li>MVC</li><li>SQL Server</li>
+        </ul>
+        <div class="collapse" id="p4-more" role="region" aria-labelledby="p4-btn">
+          <div class="collapse__inner">
+            <div class="project__more">
+              <div>
+              <ul class="entry__list">
+                <li data-i18n="proj.hotel.d1">Back-office for hotel managers: hotel details, rooms, bookings and customers.</li>
+                <li data-i18n="proj.hotel.d2">One SQL Server database shared by every hotel of the chain.</li>
+                <li data-i18n="proj.hotel.d3">Built in a two-person Scrum team, with user stories and versioning on GitHub.</li>
+              </ul>
+              </div>
+            </div>
           </div>
-          <p class="project__desc" data-i18n="proj.hotel.desc">Team project run with Scrum: a back-office for hotel managers (rooms, bookings, customers) on a database shared by every hotel.</p>
-          <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a11y.tech">
-            <li>C#</li><li>Entity Framework</li><li>MVC</li><li>SQL Server</li>
-          </ul>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Education + Experience side by side -->
+  <div class="duo">
+    <section class="card reveal" id="education" aria-labelledby="edu-h">
+      <h2 class="card__title" id="edu-h" data-i18n="edu.title">Education</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__date">2025 – 27</span>
+          <div>
+            <h3 class="entry__title" data-i18n="edu.bts.title">BTS SIO — Software development</h3>
+            <p class="entry__org">Lycée Lamartine, Mâcon</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__date">2023 – 25</span>
+          <div>
+            <h3 class="entry__title" data-i18n="edu.bac.title">Baccalauréat STMG, with honours</h3>
+            <p class="entry__org">Lycée Lamartine, Mâcon</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__date">2018 – 23</span>
+          <div>
+            <h3 class="entry__title" data-i18n="edu.geo.title">Technical high school — Surveying</h3>
+            <p class="entry__org" data-i18n="edu.geo.org">Italy · 2D/3D design</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="card reveal" id="experience" aria-labelledby="exp-h">
+      <h2 class="card__title" id="exp-h" data-i18n="exp.title">Experience</h2>
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title" data-i18n="exp.ocp.role">IT intern — web development</h3>
+          <span class="tag" data-i18n="exp.ocp.date">2026 · 5 weeks</span>
+        </div>
+        <p class="entry__org" data-i18n="exp.ocp.org">OCP Group — IT department, Khouribga (Morocco)</p>
+        <ul class="entry__list">
+          <li data-i18n="exp.ocp.b1">Designed and built an ITSM ticketing web application on my own, in PHP and MySQL.</li>
+          <li data-i18n="exp.ocp.b2">Modelled the database after studying a real ITSM dataset.</li>
+          <li data-i18n="exp.ocp.b3">Took part in day-to-day IT support: user assistance, incidents, maintenance.</li>
+        </ul>
+      </article>
+    </section>
+
+  </div>
+
+  <!-- Skills: one category at a time, picked with buttons -->
   <section class="card reveal" id="skills" aria-labelledby="skills-h">
-    <h2 class="card__title" id="skills-h" data-i18n="skills.title">Skills</h2>
+    <div class="card__head card__head--tabs">
+      <h2 class="card__title" id="skills-h" data-i18n="skills.title">Skills</h2>
+      <div class="filters" role="tablist" aria-label="Skill categories" data-i18n-attr="aria-label:a11y.filters">
+      <span class="filters__bar" aria-hidden="true"></span>
+      <button class="filter" type="button" role="tab" id="tab-prog" aria-controls="panel-prog" aria-selected="true" tabindex="0" data-i18n="sk.cat.prog">Programming</button>
+      <button class="filter" type="button" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false" tabindex="-1" data-i18n="sk.cat.web">Web</button>
+      <button class="filter" type="button" role="tab" id="tab-db" aria-controls="panel-db" aria-selected="false" tabindex="-1" data-i18n="sk.cat.db">Databases</button>
+      <button class="filter" type="button" role="tab" id="tab-sec" aria-controls="panel-sec" aria-selected="false" tabindex="-1" data-i18n="sk.cat.sec">Cybersecurity</button>
+      <button class="filter" type="button" role="tab" id="tab-tools" aria-controls="panel-tools" aria-selected="false" tabindex="-1" data-i18n="sk.cat.tools">Tools</button>
+      <button class="filter" type="button" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1" data-i18n="sk.cat.ai">AI tools</button>
+      <button class="filter" type="button" role="tab" id="tab-cad" aria-controls="panel-cad" aria-selected="false" tabindex="-1" data-i18n="sk.cat.cad">CAD &amp; 3D</button>
+      <button class="filter" type="button" role="tab" id="tab-lang" aria-controls="panel-lang" aria-selected="false" tabindex="-1" data-i18n="sk.cat.lang">Languages</button>
+      </div>
+    </div>
 
-    <dl class="skills">
-      <dt data-i18n="sk.db">Databases</dt>
-      <dd data-i18n="sk.dbVal">SQL, MySQL (phpMyAdmin, Workbench), SQL Server, Transact-SQL</dd>
-      <dt data-i18n="sk.web">Web development</dt>
-      <dd>HTML, CSS, PHP (PDO), Laravel (MVC), Eloquent, REST API</dd>
-      <dt data-i18n="sk.oop">Object-oriented programming</dt>
-      <dd data-i18n="sk.oopVal">C# (class libraries), Python, LINQ, Entity Framework, unit testing, UML</dd>
-      <dt data-i18n="sk.event">Event-driven programming</dt>
-      <dd data-i18n="sk.eventVal">Visual Studio .NET, C# (WinForms), GUI classes, collections, data access</dd>
-      <dt data-i18n="sk.security">Cybersecurity</dt>
-      <dd data-i18n="sk.securityVal">GDPR, protection against SQL injection, XSS and CSRF, hashing, encryption</dd>
-      <dt data-i18n="sk.tools">Tools</dt>
-      <dd data-i18n="sk.toolsVal">Git / GitHub, WordPress, PrestaShop, web hosting (FTP), Windows, Linux, virtualisation, Word, Excel</dd>
-      <dt data-i18n="sk.ai">AI for development</dt>
-      <dd>Antigravity, Claude Code, Codex, Cursor, GitHub Copilot, Hermes, OpenCode, Ollama, LM Studio</dd>
-      <dt data-i18n="sk.cad">CAD</dt>
-      <dd data-i18n="sk.cadVal">AutoCAD, Fusion 360, Bambu Studio (3D printing)</dd>
-    </dl>
-
-    <h3 class="sub-title" data-i18n="sk.langs">Languages</h3>
-    <ul class="langs">
-      <li><span data-i18n="sk.it">Italian</span><span class="langs__lvl" data-i18n="sk.itLvl">Fluent (C1)</span></li>
-      <li><span data-i18n="sk.fr">French</span><span class="langs__lvl" data-i18n="sk.frLvl">Upper-intermediate (B2)</span></li>
-      <li><span data-i18n="sk.en">English</span><span class="langs__lvl" data-i18n="sk.enLvl">Upper-intermediate (B2)</span></li>
-      <li><span data-i18n="sk.ar">Arabic (Moroccan)</span><span class="langs__lvl" data-i18n="sk.arLvl">Fluent (spoken)</span></li>
-    </ul>
-  </section>
-
-  <!-- Education -->
-  <section class="card reveal" id="education" aria-labelledby="edu-h">
-    <h2 class="card__title" id="edu-h" data-i18n="edu.title">Education</h2>
-
-    <ol class="timeline">
-      <li class="timeline__item">
-        <span class="timeline__date">2025 – 2027</span>
-        <div>
-          <h3 class="entry__title" data-i18n="edu.bts.title">BTS SIO — Software development (SLAM)</h3>
-          <p class="entry__org" data-i18n="edu.bts.org">Lycée Lamartine, Mâcon · two-year higher national diploma in IT</p>
-        </div>
-      </li>
-      <li class="timeline__item">
-        <span class="timeline__date">2023 – 2025</span>
-        <div>
-          <h3 class="entry__title" data-i18n="edu.bac.title">Baccalauréat STMG — Information systems, with honours</h3>
-          <p class="entry__org">Lycée Lamartine, Mâcon</p>
-        </div>
-      </li>
-      <li class="timeline__item">
-        <span class="timeline__date">2018 – 2023</span>
-        <div>
-          <h3 class="entry__title" data-i18n="edu.geo.title">Technical high school — Surveying</h3>
-          <p class="entry__org" data-i18n="edu.geo.org">Italy · technical drawing and 2D/3D design</p>
-        </div>
-      </li>
-    </ol>
+    <div class="panels">
+      <div class="panel" role="tabpanel" id="panel-prog" aria-labelledby="tab-prog">
+        <ul class="chips chips--lg"><li>C#</li><li>.NET</li><li>WinForms</li><li>LINQ</li><li>Entity Framework</li><li>Python</li><li data-i18n="sk.unit">Unit testing</li><li>UML</li><li>Visual Studio</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-web" aria-labelledby="tab-web" hidden>
+        <ul class="chips chips--lg"><li>HTML</li><li>CSS</li><li>PHP</li><li>PDO</li><li>Laravel (MVC)</li><li>Eloquent</li><li>REST API</li><li data-i18n="sk.ftp">FTP hosting</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-db" aria-labelledby="tab-db" hidden>
+        <ul class="chips chips--lg"><li>SQL</li><li>MySQL</li><li>SQL Server</li><li>Transact-SQL</li><li data-i18n="sk.stored">Stored procedures</li><li data-i18n="sk.triggers">Triggers</li><li>phpMyAdmin</li><li>Workbench</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-sec" aria-labelledby="tab-sec" hidden>
+        <ul class="chips chips--lg"><li data-i18n="sk.gdpr">GDPR</li><li data-i18n="sk.sqli">SQL injection</li><li>XSS</li><li>CSRF</li><li data-i18n="sk.hashing">Password hashing</li><li data-i18n="sk.encryption">Encryption</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-tools" aria-labelledby="tab-tools" hidden>
+        <ul class="chips chips--lg"><li>Git</li><li>GitHub</li><li>WordPress</li><li>PrestaShop</li><li>Windows</li><li>Linux</li><li data-i18n="sk.virt">Virtualisation</li><li>Word</li><li>Excel</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" hidden>
+        <ul class="chips chips--lg"><li>Claude Code</li><li>Cursor</li><li>GitHub Copilot</li><li>Codex</li><li>Antigravity</li><li>OpenCode</li><li>Hermes</li><li>Ollama</li><li>LM Studio</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-cad" aria-labelledby="tab-cad" hidden>
+        <ul class="chips chips--lg"><li>AutoCAD</li><li>Fusion 360</li><li>Bambu Studio</li><li data-i18n="sk.print">3D printing</li></ul>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-lang" aria-labelledby="tab-lang" hidden>
+        <ul class="chips chips--lg">
+          <li><span data-i18n="sk.it">Italian</span><span class="chip__lvl" data-i18n="sk.itLvl">Fluent (C1)</span></li>
+          <li><span data-i18n="sk.fr">French</span><span class="chip__lvl" data-i18n="sk.frLvl">Upper-intermediate (B2)</span></li>
+          <li><span data-i18n="sk.en">English</span><span class="chip__lvl" data-i18n="sk.enLvl">Upper-intermediate (B2)</span></li>
+          <li><span data-i18n="sk.ar">Arabic (Moroccan)</span><span class="chip__lvl" data-i18n="sk.arLvl">Fluent (spoken)</span></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- Contact -->
   <section class="card card--cta reveal" aria-labelledby="contact-h">
-    <h2 class="card__title" id="contact-h" data-i18n="contact.title">Have an internship to offer?</h2>
-    <p class="lede" data-i18n="contact.body">I'm available from 11 January to 12 February 2027, in Mâcon and the surrounding area. I'd be glad to talk about your team and projects.</p>
+    <div class="cta__text">
+      <h2 class="card__title" id="contact-h" data-i18n="contact.title">Have an internship to offer?</h2>
+      <p class="lede" data-i18n="contact.body">Available from 11 January to 12 February 2027, in Mâcon and the surrounding area.</p>
+    </div>
     <div class="hero__actions">
       <a class="btn btn--primary" href="mailto:mouad.tounani.dev@gmail.com">
         <svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.8 7 12 13.2 20.2 7"/></svg>
-        mouad.tounani.dev@gmail.com
+        <span data-i18n="contact.cta">Get in touch</span>
       </a>
       <a class="btn" href="CV_Mouad_TOUNANI_EN.pdf" download data-i18n-attr="href:hero.cvFile">
         <svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0 4.5-4.5M12 14.5 7.5 10M4.5 19h15"/></svg>
@@ -269,6 +362,6 @@
 
 </main>
 
-<script src="assets/js/main.js?v=4"></script>
+<script src="assets/js/main.js?v=11"></script>
 </body>
 </html>
